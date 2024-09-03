@@ -1,13 +1,12 @@
 package hello.core.member;
 
 public class MemberServiceIml implements MemberService {
-    private final MemberRepository memberRepository = new MemberRepository();
+    private final MemberRepository memberRepository = new MemoryMemberRepository();
 
 
     @Override
     public void join(Member member) {
         memberRepository.save(member);
-
     }
 
     @Override
