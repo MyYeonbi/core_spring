@@ -17,7 +17,7 @@ public class ApplicationContextInfoTest {
     void findApplicationBean() {
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
-            Object bean = ac.getBean(beanDefinitionName){
+            Object bean = ac.getBean(beanDefinitionName);{
                 BeanDefinition beanDefinition= ac.getBeanDefinition(beanDefinitionName);
 
                 if(beanDefinition.getRole() == BeanDefinition.ROLE_APPLICATION){
