@@ -30,10 +30,7 @@ public class AppConfig {
 
 @Bean
 public OrderService orderService(){
-        return new OrderServiceImpl(
-                new MemoryMemberRepository(),
-                new FixDiscountPolicy()
-        );
+        return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 
 
