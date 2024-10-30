@@ -1,9 +1,10 @@
 package hello.core.member;
 
-import hello.core.AppConfig;
-import org.assertj.core.api.Assertions;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
 
@@ -13,9 +14,11 @@ public class MemberServiceTest {
     void join() {
         //given
         Member member = new Member(1L, "member A", Grade.VIP);
+
         //when
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
+
         //then
         Assertions.assertThat(member).isEqualTo(findMember);
 
