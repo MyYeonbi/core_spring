@@ -30,7 +30,7 @@ public class Order {
         return itemPrice;
     }
 
-    public getDiscountPrice() {
+    public int getDiscountPrice() {
         return discountPrice;
     }
 
