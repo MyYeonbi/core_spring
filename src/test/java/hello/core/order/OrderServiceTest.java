@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import hello.core.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderServiceTest {
 
    MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
-   OrderService orderService = new OrderServiceImpl(memberService, new FixDiscountPolicy());
+   OrderService orderService = new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
 
    @Test
     void createOrder() {
@@ -22,6 +22,6 @@ public class OrderServiceTest {
        memberService.join(member);
 
        Order order = orderService.createOrder(memberId, "itemA", 10000);
-       Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+assertThat(order.getDiscountPrice()).isEqualTo(1000);
    }
 }
