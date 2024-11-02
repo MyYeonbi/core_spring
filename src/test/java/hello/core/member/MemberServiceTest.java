@@ -7,8 +7,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
+    //리포지토리 인스턴스 생성
+    MemberRepository memberRepository = new MemoryMemberRepository();
 
-    MemberService memberService = new MemberServiceImpl();
+    //서비스에 리포지토리 전달
+    MemberService memberService = new MemberServiceImpl(memberRepository);
 
     @Test
     void join() {
