@@ -4,13 +4,10 @@ import hello.core.discount.DiscountPolicy;
 import hello.core.order.OrderService;
 
 public class MemberServiceImpl implements MemberService {
-    // 또는 null로 초기화 가능
-    private final MemberRepository memberRepository ;
+    private final MemberRepository memberRepository;
 
-    //생성자 주입
     public MemberServiceImpl(MemberRepository memberRepository) {
-
-        this.memberRepository = memberRepository ;
+        this.memberRepository = memberRepository;
     }
 
     public void join(Member member) {
@@ -18,7 +15,6 @@ public class MemberServiceImpl implements MemberService {
     }
 
     public Member findMember(Long memberId) {
-
         return memberRepository.findById(memberId);
     }
 }
