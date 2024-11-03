@@ -5,17 +5,15 @@ import java.util.Map;
 
 public class MemoryMemberRepository implements MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
+    private int discountPercent = 10;
 
     @Override
-    public void save(Member member) {
-        store.put(member.getId(), member);
+    public int discount(Member member, int price) {
 
+        if(member.getGrade() == Grade.VIP) {
+            return price * discountPercent / 100;
+        } else {
+            return 0;
+        }
     }
-
-    @Override
-    public Member findById(Long memberId) {
-        return store.get(memberId);
-
-}
 }
