@@ -1,4 +1,4 @@
-package hello.core;
+package core;
 
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.MemberService;

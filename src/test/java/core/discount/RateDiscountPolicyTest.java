@@ -1,5 +1,6 @@
-package hello.core.discount;
+package core.discount;
 
+import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import org.assertj.core.api.Assertions;
@@ -22,7 +23,7 @@ class RateDiscountPolicyTest {
         int discount = discountPolicy.discount(member, 10000);
 
         //then
-        assertThat(discount).isEqualTo(1000);
+        Assertions.assertThat(discount).isEqualTo(1000);
     }
 
     @Test
@@ -35,6 +36,6 @@ class RateDiscountPolicyTest {
         int discount = discountPolicy.discount(member, 10000);
 
         //then
-        assertThat(discount).isEqualTo(0);
+        Assertions.assertThat(discount).isEqualTo(0);
     }
 }

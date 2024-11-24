@@ -1,4 +1,4 @@
-package hello.core.beanfind;
+package beanfind;
 
 import hello.core.AppConfig;
 import hello.core.member.MemberService;

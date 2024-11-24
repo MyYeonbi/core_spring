@@ -1,4 +1,4 @@
-package hello.core.beanfind;
+package beanfind;
 
 import hello.core.AppConfig;
 import org.junit.jupiter.api.Test;

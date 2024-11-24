@@ -1,7 +1,10 @@
-package hello.core.order;
-import hello.core.AppConfig;
+package core.order;
+import core.AppConfig;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.member.*;
+import hello.core.order.Order;
+import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,6 +25,6 @@ public class OrderServiceTest {
        memberService.join(member);
 
        Order order = orderService.createOrder(memberId, "itemA", 10000);
-assertThat(order.getDiscountPrice()).isEqualTo(1000);
+Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
    }
 }
