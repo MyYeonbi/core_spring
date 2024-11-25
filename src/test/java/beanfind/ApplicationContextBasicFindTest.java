@@ -17,32 +17,13 @@ import static org.assertj.core.api.Assertions.*;
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
     @Test
-    @DisplayName("모든 빈 출력하기")
-    void findAllBean() {
-        String[] beanDefinitionNames = ac.getBeanDefinitionNames();
-        for (String beanDefinitionName : beanDefinitionNames) {
-            Object bean = ac.getBean(beanDefinitionName);
-            System.out.println("bean = " + beanDefinitionName + "object = " + bean);
-
-        }
+     @DisplayName("빈 이름으로 조회")
+     void findBeanByName() {
+        MemberService memberService = ac.getBean("memberService",MemberService.class);
+        System.out.println("memberService: " + memberService);
+        System.out.println("memberService.getClass(): " + memberService.getClass());
+        
+       // Assertions.assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
+        assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
-
-    @Test
-    @DisplayName("애플리케이션 빈 출력하기")
-    void findApplicationBean() {
-       String[] beanDefinitionNames =  ac.getBeanDefinitionNames();
-        for (String beanDefinitionName : beanDefinitionNames) {
-            BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
-
-            //Role ROLE_APPLICATION : 직접 등록한 애플리케이션 빈
-            //Role ROLE_INFRASTRUCTURE : 스프링이 내부에서 사용하는 빈
-            if (beanDefinition.getRole() == BeanDefinition.ROLE_INFRASTRUCTURE) {
-                Object bean = ac.getBean(beanDefinitionName);
-                System.out.println("name = " + beanDefinitionName + "object = " + bean);
-            }
-        }
-
-        }
-
-
 }
