@@ -1,18 +1,12 @@
 package beanfind;
 
-import hello.core.AppConfig;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.springframework.beans.factory.NoSuchBeanDefinitionException;
-import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import static org.assertj.core.api.Assertions.*;
-
- class ApplicationContextBasicFindTest {
+class ApplicationContextBasicFindTest {
 
     AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
