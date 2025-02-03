@@ -10,4 +10,9 @@ public class HelloController {
         return "Hello world";
     }
 
+    @GetMapping("/api/get")
+    @ResponseBody
+    public String get() {
+        return "Get Method 요청";
+    }
 }
