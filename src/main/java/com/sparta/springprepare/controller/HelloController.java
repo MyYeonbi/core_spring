@@ -15,4 +15,10 @@ public class HelloController {
     public String get() {
         return "Get Method 요청";
     }
+
+    @PostMapping("api/post")
+    @ResponseBody
+    public String post() {
+        return "POST Method 요청";
+    }
 }
