@@ -67,6 +67,7 @@ public class RequestController {
 
 
 
+
     // [Request sample]
 // GET http://localhost:8080/hello/request/form/param/model?name=Robbie&age=95
     @GetMapping("/form/param/model")
@@ -75,5 +76,17 @@ public class RequestController {
         return String.format("Hello, @ModelAttribute.<br> (name = %s, age = %d) ", star.name, star.age);
     }
 
+
+    // [Request sample]
+// POST http://localhost:8080/hello/request/form/json
+// Header
+//  Content type: application/json
+// Body
+//  {"name":"Robbie","age":"95"}
+    @PostMapping("/form/json")
+    @ResponseBody
+    public String helloPostRequestJson(@RequestBody Star star) {
+        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.name, star.age);
+    }
     }
 
