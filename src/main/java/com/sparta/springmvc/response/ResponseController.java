@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ResponseController {
 
     //   Content-Type: text/html
-    // [Response body]
-    //   {"name":"Robbie","age":95}
+
+
 
         @GetMapping("/json/string")
         @ResponseBody
@@ -18,10 +18,13 @@ public class ResponseController {
             return "{\"name\":\"Robbie\",\"age\":95}";
         }
 
+        // Content-Type : applicateion/json
+       // Response Body
+        //   {"name":"Robbie","age":95}
         @GetMapping("/json/class")
         @ResponseBody
     public Star helloClassJson() {
-            return null;
+            return new Star("Robbie", 95);
     }
 
 
