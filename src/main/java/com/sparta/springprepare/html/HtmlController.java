@@ -7,7 +7,12 @@ public class HtmlController {
 
     @GetMapping("/static-hello")
     public String hello() {
-        return "hello.html"
+        return "hello.html";
+    }
+
+    @GetMapping("/html/redirect")
+    public String htmlStatic() {
+        return "redirect:/hello.html";
     }
 
 }
