@@ -1,4 +1,4 @@
-package com.sparta.springprepare.controller;
+package com.sparta.springmvc.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
