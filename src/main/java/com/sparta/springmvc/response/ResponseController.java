@@ -18,7 +18,13 @@ public class ResponseController {
             return "{\"name\":\"Robbie\",\"age\":95}";
         }
 
-        
+        @GetMapping("/json/class")
+        @ResponseBody
+    public Star helloClassJson() {
+            return null;
+    }
+
+
     }
 
 
