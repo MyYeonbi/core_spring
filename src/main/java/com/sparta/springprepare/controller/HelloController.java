@@ -21,4 +21,10 @@ public class HelloController {
     public String post() {
         return "POST Method 요청";
     }
+
+    @PutMapping("/api/put")
+    @ResponseBody
+    public String put() {
+        return "PUT Method 요청";
+    }
 }
