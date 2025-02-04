@@ -52,5 +52,18 @@ public class RequestController {
     public String helloRequestBodyForm(@ModelAttribute Star star) {
         return String.format("Hello, @ModelAttribute.<br> (name = %s, age = %d) ", star.name, star.age);
     }
+
+    // [Request sample]
+// POST http://localhost:8080/hello/request/form/json
+// Header
+//  Content type: application/json
+// Body
+//  {"name":"Robbie","age":"95"}
+    @PostMapping("/form/json")
+    @ResponseBody
+    public String helloPostRequestJson(@RequestBody Star star) {
+        return String.format("Hello, @RequestBody.<br> (name = %s, age = %d) ", star.name, star.age);
+    }
+
     }
 
