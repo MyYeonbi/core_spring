@@ -27,4 +27,10 @@ public class HelloController {
     public String put() {
         return "PUT Method 요청";
     }
+
+    @DeleteMapping("/api/delete")
+    @ResponseBody
+    public String delete() {
+        return "DELETE Method 요청";
+    }
 }
