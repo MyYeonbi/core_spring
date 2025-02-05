@@ -51,7 +51,8 @@ public class MemoController {
         memo.setId(id);
 
         // Entity -> ResponseDto
-        MemoResponseDto memoResponseDto = new MemoResponseDto(memo);
+        MemoResponseDto = new MemoResponseDto(memo);
+
 
         return memoResponseDto;
     }
@@ -118,4 +119,4 @@ public class MemoController {
             }
         }, id);
     }
-}}
+}
