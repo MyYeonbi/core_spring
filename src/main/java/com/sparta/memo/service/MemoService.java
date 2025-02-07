@@ -19,8 +19,11 @@ public class MemoService {
 
     public MemoService(ApplicationContext context) {
         // 1.'Bean' 이름으로 가져오기
-        MemoRepository memoRepository = (MemoRepository) context.getBean("memoRepository");
-       this.memoRepository = memoRepository;
+        //MemoRepository memoRepository = (MemoRepository) context.getBean("memoRepository");
+
+        // 2. 'Bean' 클래스 형식으로 가져오기.
+        MemoRepository memoRepository = context.getBean(MemoRepository.class);
+        this.memoRepository = memoRepository;
     }
 
     public MemoResponseDto createMemo(MemoRequestDto requestDto) {
