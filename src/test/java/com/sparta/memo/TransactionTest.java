@@ -6,8 +6,10 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 
+@SpringBootTest
 public class TransactionTest {
 
     @PersistenceContext
@@ -23,5 +25,15 @@ public class TransactionTest {
         memo.setContents("@Transactioanl 테스트 중!");
 
         em.persist(memo); // 영속성 컨텍스트에 메모 Entity 객체를 저장한다.
+    }
+
+    @Test
+    @DisplayName("메모 생성 실패")
+    void test2() {
+        Memo memo = new Memo();
+        memo.setUsername("Robbie");
+        memo.setContents("@Transactional 테스트 중!");
+
+        em.persist(memo); // 영속성 컨텍스트에 메모 Entity 객체를 저장.
     }
 }
