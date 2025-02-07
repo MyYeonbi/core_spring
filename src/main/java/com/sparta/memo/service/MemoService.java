@@ -5,6 +5,7 @@ import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
 import com.sparta.memo.entity.Memo;
 import com.sparta.memo.repository.MemoRepository;
+import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,9 @@ public class MemoService {
 
 
 
-    public MemoService(MemoRepository memoRepository) {
+    public MemoService(ApplicationContext context) {
+        // 1.'Bean' 이름으로 가져오기
+        MemoRepository memoRepository = (MemoRepository) context.getBean("memoRepository");
        this.memoRepository = memoRepository;
     }
 
