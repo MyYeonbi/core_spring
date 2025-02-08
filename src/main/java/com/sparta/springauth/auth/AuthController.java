@@ -44,6 +44,17 @@ public class AuthController {
         return "createSession";
     }
 
+    @GetMapping("/get-session")
+    public String getSession(HttpServletRequest req) {
+        // 세션이 존재할 경우 세션 반환, 없을 경우 null 반환
+        HttpSession session = req.getSession(false);
+
+        String value = (String) session.getAttribute(AUTHORIZATION_HEADER); // 가져온 세션에 저장된 Value 를 Name 을 사용하여 가져옵니다.
+        System.out.println("value = " + value);
+
+        return "getSession : " + value;
+    }
+
     public static void addCookie(String cookieValue, HttpServletResponse res) {
         try {
             cookieValue = URLEncoder.encode(cookieValue, "utf-8").replaceAll("\\+", "%20"); // Cookie Value 에는 공백이 불가능해서 encoding 진행
