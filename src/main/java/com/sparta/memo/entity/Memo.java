@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Table(name = "memo") // 매핑할 테이블의 이름을 저장.
@@ -21,6 +23,9 @@ public class Memo {
 
     @Column(name = "contents", nullable = false, length = 500)
     private String contents;
+
+
+
 
     public Memo(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
