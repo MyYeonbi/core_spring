@@ -52,7 +52,7 @@ public class MemoService {
         Memo memo = findMemo(id);
 
         // memo 내용 수정
-        memoRepository.update(id, requestDto);
+        memo.update(requestDto);
 
         return id;
 
@@ -64,7 +64,7 @@ public class MemoService {
         Memo memo = findMemo(id);
 
         // memo 삭제
-        memoRepository.delete(id);
+        memoRepository.delete(memo);
 
         return id;
 
