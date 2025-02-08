@@ -2,7 +2,9 @@ package com.sparta.springauth.auth;
 
 
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,17 @@ public class AuthController {
         System.out.println("value = " + value);
 
         return "getCookie : " + value;
+    }
+
+    @GetMapping("/create-session")
+    public String createSession(HttpServletRequest req) {
+        // 세션이 존재할 경우 세션 반환, 없을 경우 새로운 세션을 생성한 후 반환
+        HttpSession session = req.getSession(true);
+
+        // 세션에 저장될 정보 Name - Value 를 추가합니다.
+        session.setAttribute(AUTHORIZATION_HEADER, "Robbie Auth");
+
+        return "createSession";
     }
 
     public static void addCookie(String cookieValue, HttpServletResponse res) {
