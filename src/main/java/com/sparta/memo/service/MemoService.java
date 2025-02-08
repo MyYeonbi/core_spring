@@ -5,6 +5,7 @@ import com.sparta.memo.dto.MemoRequestDto;
 import com.sparta.memo.dto.MemoResponseDto;
 import com.sparta.memo.entity.Memo;
 import com.sparta.memo.repository.MemoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.context.ApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -46,6 +47,8 @@ public class MemoService {
         return memoRepository.findAll().stream().map(MemoResponseDto::new).toList();
     }
 
+
+    @Transactional
     public Long updateMemo(Long id, MemoRequestDto requestDto) {
 
         // 해당 메모가 DB에 존재하는지 확인
