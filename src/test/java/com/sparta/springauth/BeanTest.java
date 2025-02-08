@@ -11,15 +11,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class BeanTest {
 
     @Autowired
-    Food pizza;
+    Food food;
 
-    @Autowired
-    Food chicken;
+
 
     @Test
     @DisplayName("테스트")
     void test1(){
-        pizza.eat();
-        chicken.eat();
+      food.eat();
     }
 }
