@@ -48,6 +48,10 @@ public class MemoService {
     }
 
 
+    public List<MemoResponseDto> getMemosByKeyword(String keyword) {
+         return memoRepository.findAll().stream().map(MemoResponseDto::new).toList();
+    }
+
     @Transactional
     public Long updateMemo(Long id, MemoRequestDto requestDto) {
 
