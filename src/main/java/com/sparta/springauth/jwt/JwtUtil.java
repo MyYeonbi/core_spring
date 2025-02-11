@@ -78,7 +78,6 @@ public class JwtUtil {
             logger.error("Not Found Token");
             throw new NullPointerException("Not Found Token");
         }
-    //JWT 검증
 
     //JWT에서 사용자 정보 가져오기
 
